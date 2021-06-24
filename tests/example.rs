@@ -1,5 +1,4 @@
-use ldcache_rs::{Cache, CacheError, Entry};
-use std::collections::hash_map::Iter;
+use ldcache_rs::{Cache, CacheError};
 
 #[test]
 fn load_default() -> Result<(), CacheError> {
