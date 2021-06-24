@@ -1,0 +1,11 @@
+[package]
+name = "ldcache_rs"
+version = "0.1.0"
+edition = "2018"
+
+[lib]
+name = "ldcache_rs"
+crate-type = [ "rlib"]
+
+[dependencies]
+thiserror = "1"
