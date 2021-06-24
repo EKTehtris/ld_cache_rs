@@ -11,7 +11,7 @@ If you want to make a dirt cheap parser for ld.so.cache a simple call to
 
 ## Usage
 
-You usually want to load the default cache (/etc/ld.so.cache) with `Cache::new()``, however if you need to load a file
+You usually want to load the default cache (/etc/ld.so.cache) with `Cache::new()`, however if you need to load a file
 and not the default one, we do support that with  `Cache::parse(buf: &[u8], endianness: TargetEndian)` where the
 endianness is one of the 3 values, Big, Little and Native.
 
