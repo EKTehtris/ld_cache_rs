@@ -2,6 +2,10 @@
 name = "ldcache_rs"
 version = "0.1.0"
 edition = "2018"
+authors = ["Erwan KESSLER <Tehtris>"]
+description="Library to parse ld.so.cache according to the numerous format define in glibc"
+license="MIT"
+license-file="LICENSE"
 
 [lib]
 name = "ldcache_rs"
