@@ -459,7 +459,7 @@ mod tests {
 
     #[test]
     fn test_big_endian_old_format_s390x() {
-        let data = include_bytes!("../tests/ld.so.cache_s390x_old");
+        let data = include_bytes!("../tests/fixtures/ld.so.cache_s390x_old");
         let cache = Cache::parse(data, TargetEndian::Big);
         assert!(cache.is_ok());
         let cache = cache.unwrap();
@@ -469,13 +469,13 @@ mod tests {
         assert_eq!(cache.strlen, None);
         assert_eq!(cache.flags, None);
         assert_eq!(cache.extension_offset, None);
-        let strings: &str = include_str!("../tests/s390x.strings");
+        let strings: &str = include_str!("../tests/fixtures/s390x.strings");
         test_entries(strings, cache);
     }
 
     #[test]
     fn test_little_endian_new_format_mips() {
-        let data = include_bytes!("../tests/ld.so.cache_mips");
+        let data = include_bytes!("../tests/fixtures/ld.so.cache_mips");
         let cache = Cache::parse(data, TargetEndian::Little);
         assert!(cache.is_ok());
         let cache = cache.unwrap();
@@ -485,13 +485,13 @@ mod tests {
         assert_eq!(cache.strlen, Some(60915));
         assert_eq!(cache.flags, Some(2)); // little endian
         assert_eq!(cache.extension_offset, Some(118732));
-        let strings: &str = include_str!("../tests/mips.strings");
+        let strings: &str = include_str!("../tests/fixtures/mips.strings");
         test_entries(strings, cache);
     }
 
     #[test]
     fn test_little_endian_new_format_debian_x86_64() {
-        let data = include_bytes!("../tests/ld.so.cache_debian");
+        let data = include_bytes!("../tests/fixtures/ld.so.cache_debian");
         let cache = Cache::parse(data, TargetEndian::Little);
         assert!(cache.is_ok());
         let cache = cache.unwrap();
@@ -501,13 +501,13 @@ mod tests {
         assert_eq!(cache.strlen, Some(4188));
         assert_eq!(cache.flags, Some(2)); // little endian
         assert_eq!(cache.extension_offset, Some(0));
-        let strings: &str = include_str!("../tests/debian.strings");
+        let strings: &str = include_str!("../tests/fixtures/debian.strings");
         test_entries(strings, cache);
     }
 
     #[test]
     fn test_little_endian_old_format_debian_x86_64() {
-        let data = include_bytes!("../tests/ld.so.cache_debian_old");
+        let data = include_bytes!("../tests/fixtures/ld.so.cache_debian_old");
         let cache = Cache::parse(data, TargetEndian::Little);
         assert!(cache.is_ok());
         let cache = cache.unwrap();
@@ -517,7 +517,7 @@ mod tests {
         assert_eq!(cache.strlen, None);
         assert_eq!(cache.flags, None);
         assert_eq!(cache.extension_offset, None);
-        let strings: &str = include_str!("../tests/debian_old.strings");
+        let strings: &str = include_str!("../tests/fixtures/debian_old.strings");
         test_entries(strings, cache);
     }
 
